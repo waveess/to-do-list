@@ -1,0 +1,68 @@
+:root{
+    --clr-primary: rgb(54, 112, 199);
+    --clr-light: #f4f4f4;
+    --clr-dark: #333;
+    --clr-warning: rgb(99, 36, 36);
+    
+}   
+
+*,
+*::before,
+*::after {
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    background-color: var(--clr-primary);
+    color: var(--clr-light);
+
+    display: grid;
+    grid: 
+    /* the first row of content */
+    "header header header header" auto
+    /* positioning the columns */
+    "...... lists active ......" auto/
+    1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+}
+
+.title{
+    grid-area: header;
+    text-align: center;
+    font-size: calc(7vw + 2rem);
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.1);
+    letter-spacing: 2px;
+    margin: -0.1em 0 0.5em;
+}
+
+.all-tasks{
+    grid-area: lists;
+}
+
+.task-list{
+    font-size: 2rem;
+    line-height: 1.7;
+    list-style: circle;
+    padding-left: 1.1rem;
+}
+
+.new {
+    background: transparent;
+     border: 0;
+    color: inherit;
+    border-bottom: 1px solid currentColor; 
+}
+
+.active-list{
+    font-weight: 700;
+}
+
+/* active refers to teh active list */
+.todo-list{
+    grid-area: active;
+}
